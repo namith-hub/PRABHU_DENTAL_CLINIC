@@ -345,7 +345,7 @@ const translations = {
     "mobile.book_visit": "Book Visit",
     "mobile.directions": "Directions",
     "gallery.tab_clinic": "Clinic Photos",
-    "gallery.tab_patient": "Patient Photos",
+    "gallery.tab_patient": "Orthodontic / Braces Cases",
     "gallery.patient_consent_note": "All patient photographs and treatment experiences are documented and published with prior informed patient consent adhering to clinical privacy ethics.",
     "gallery.item_exterior_tag": "Exterior",
     "gallery.item_exterior_title": "Clinic Exterior & Signboard",
