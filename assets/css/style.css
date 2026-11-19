@@ -2308,6 +2308,7 @@ html[lang="hi"] .gallery-tab-btn {
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+  height: 220px;
 }
 
 .patient-case-card:hover {
@@ -2322,6 +2323,8 @@ html[lang="hi"] .gallery-tab-btn {
   position: relative;
   background-color: #f1f5f9;
   gap: 3px;
+  width: 100%;
+  height: 100%;
 }
 
 .ba-split-container--3col {
@@ -2329,6 +2332,9 @@ html[lang="hi"] .gallery-tab-btn {
 }
 
 @media (max-width: 640px) {
+  .patient-case-card {
+    height: auto;
+  }
   .ba-split-container--3col {
     grid-template-columns: 1fr;
   }
@@ -2341,12 +2347,13 @@ html[lang="hi"] .gallery-tab-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .ba-pane img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 16 / 11;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
