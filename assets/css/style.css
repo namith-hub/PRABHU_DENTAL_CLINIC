@@ -2324,6 +2324,16 @@ html[lang="hi"] .gallery-tab-btn {
   gap: 3px;
 }
 
+.ba-split-container--3col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .ba-split-container--3col {
+    grid-template-columns: 1fr;
+  }
+}
+
 .ba-pane {
   position: relative;
   overflow: hidden;
