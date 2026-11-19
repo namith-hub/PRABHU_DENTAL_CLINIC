@@ -2241,6 +2241,17 @@ html[lang="hi"] .gallery-tab-btn {
   gap: 28px;
 }
 
+#galleryPatientGrid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 600px) {
+  #galleryPatientGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gallery-card {
   background-color: var(--neutral-white);
   border-radius: var(--radius-lg);
@@ -2308,7 +2319,7 @@ html[lang="hi"] .gallery-tab-btn {
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
-  height: 220px;
+  height: 290px;
 }
 
 .patient-case-card:hover {
