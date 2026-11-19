@@ -15,7 +15,7 @@ const translations = {
   "en": {
     "topbar.address": "388, 5th Cross, 14th Main, Near Bus Stop, Saraswathipuram, Mysore",
     "lang.choose": "Language:",
-    "topbar.whatsapp": "WhatsApp: 9448984480",
+    "topbar.whatsapp": "WhatsApp: 9448984486",
     "topbar.hours": "Mon – Sat: 10:30 AM – 1:30 PM &bull; 5:00 PM – 9:00 PM | Sun: Prior Appointments | Video Consult: 5:00 PM – 5:30 PM",
     "hero.stat2_num": "2 MDS",
     "nav.home": "Home",
@@ -391,7 +391,7 @@ const translations = {
   "kn": {
     "topbar.address": "388, 5ನೇ ಕ್ರಾಸ್, 14ನೇ ಮುಖ್ಯರಸ್ತೆ, ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
     "lang.choose": "ಭಾಷೆ:",
-    "topbar.whatsapp": "ವಾಟ್ಸಾಪ್: 9448984480",
+    "topbar.whatsapp": "ವಾಟ್ಸಾಪ್: 9448984486",
     "topbar.hours": "ಸೋಮ – ಶನಿ: ಬೆಳಿಗ್ಗೆ 10:30 – 1:30 &bull; ಸಂಜೆ 5:00 – 9:00 | ಭಾನು: ಮುಂಚಿತ ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ | ವೀಡಿಯೊ ಸಮಾಲೋಚನೆ: ಸಂಜೆ 5:00 – 5:30",
     "nav.home": "ಮುಖಪುಟ",
     "nav.about": "ನಮ್ಮ ಬಗ್ಗೆ",
@@ -762,7 +762,7 @@ const translations = {
   "hi": {
     "topbar.address": "388, 5वीं क्रॉस, 14वीं मेन, बस स्टॉप के पास, सरस्वतीपुरम, मैसूर",
     "lang.choose": "भाषा:",
-    "topbar.whatsapp": "व्हाट्सएप: 9448984480",
+    "topbar.whatsapp": "व्हाट्सएप: 9448984486",
     "topbar.hours": "सोम – शनि: 10:30 AM – 1:30 PM &bull; 5:00 PM – 9:00 PM | रवि: केवल पूर्व अपॉइंटमेंट | वीडियो परामर्श: 5:00 PM – 5:30 PM",
     "hero.stat2_num": "2 MDS",
     "nav.home": "होम",
@@ -1711,7 +1711,7 @@ function initAppointmentForm() {
     ];
     if (message) waLines.push('📝 *Message:* ' + message);
     waLines.push('', 'Kindly confirm the appointment at your earliest convenience.');
-    window.open('https://wa.me/919448984480?text=' + encodeURIComponent(waLines.join('\n')), '_blank');
+    window.open('https://wa.me/919448984486?text=' + encodeURIComponent(waLines.join('\n')), '_blank');
 
     // Display confirmed state in inline box
     form.style.display = 'none';
