@@ -345,7 +345,7 @@ const translations = {
     "mobile.book_visit": "Book Visit",
     "mobile.directions": "Directions",
     "gallery.tab_clinic": "Clinic Photos",
-    "gallery.tab_patient": "Orthodontic / Braces Cases",
+    "gallery.tab_patient": "Patient Photos",
     "gallery.patient_consent_note": "All patient photographs and treatment experiences are documented and published with prior informed patient consent adhering to clinical privacy ethics.",
     "gallery.item_exterior_tag": "Exterior",
     "gallery.item_exterior_title": "Clinic Exterior & Signboard",
@@ -1875,20 +1875,56 @@ function initLightbox() {
   const modalImg = modal?.querySelector('.lightbox-image-wrap img');
   const modalTitle = modal?.querySelector('.lightbox-modal-caption strong');
   const modalDesc = modal?.querySelector('.lightbox-modal-caption p');
+  const modalDirectionsBtn = modal?.querySelector('.lightbox-modal-caption .btn');
 
   if (!modal) return;
 
   trigger.forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      const card = item.closest('.gallery-card');
-      const imgSrc = item.getAttribute('data-img') || card?.querySelector('img')?.getAttribute('src');
-      const title = item.getAttribute('data-title') || card?.querySelector('.gallery-item-title')?.textContent;
-      const desc = item.getAttribute('data-desc') || card?.querySelector('.gallery-item-desc')?.textContent;
+      const galleryCard = item.closest('.gallery-card');
+      const patientCard = item.closest('.patient-case-card');
+
+      const imgSrc = item.getAttribute('data-img') || item.querySelector('img')?.getAttribute('src') || galleryCard?.querySelector('img')?.getAttribute('src');
+      
+      let title = item.getAttribute('data-title');
+      let desc = item.getAttribute('data-desc');
+
+      if (!title) {
+        if (galleryCard) {
+          title = galleryCard.querySelector('.gallery-item-title')?.textContent?.trim();
+          desc = desc || galleryCard.querySelector('.gallery-item-desc')?.textContent?.trim();
+        } else if (patientCard) {
+          const headerTitle = patientCard.querySelector('.patient-case-header-label span:first-child')?.textContent?.trim();
+          const paneLabel = item.querySelector('.ba-label-pill')?.textContent?.trim();
+          const imgAlt = item.querySelector('img')?.getAttribute('alt')?.trim();
+
+          if (headerTitle && paneLabel) {
+            title = `${headerTitle} (${paneLabel})`;
+          } else if (headerTitle) {
+            title = headerTitle;
+          } else if (imgAlt) {
+            title = imgAlt;
+          } else {
+            title = 'Patient Treatment Case';
+          }
+
+          desc = desc || (item.classList.contains('modality-single-pane') ? 'Clinical Orthodontic Treatment Modality' : 'Clinical Before & After Orthodontic Treatment');
+        }
+      }
 
       if (modalImg && imgSrc) modalImg.src = imgSrc;
       if (modalTitle && title) modalTitle.textContent = title;
       if (modalDesc && desc) modalDesc.textContent = desc;
+
+      // Only display the "Get Directions" button if viewing clinic exterior/facility photos
+      if (modalDirectionsBtn) {
+        if (galleryCard) {
+          modalDirectionsBtn.style.display = 'inline-flex';
+        } else {
+          modalDirectionsBtn.style.display = 'none';
+        }
+      }
 
       modal.classList.add('is-active');
       document.body.style.overflow = 'hidden';
